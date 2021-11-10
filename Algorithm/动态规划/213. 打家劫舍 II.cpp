@@ -1,3 +1,7 @@
+//
+// dp[i]=max(dp[i-2]+nums[i],dp[i-1])
+// 环形街区，考虑[0,n-2]和[1,n-1]即可涵盖所有的最大值情况
+//
 class Solution {
 public:
     int robRange(vector<int>& nums,int start,int end){
