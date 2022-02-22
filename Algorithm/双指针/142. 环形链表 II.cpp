@@ -7,8 +7,24 @@
  * };
  */
  
-
+\\
 \\方法一：哈希表
+\\
+class Solution {
+public:
+    ListNode *detectCycle(ListNode *head) {
+        unordered_set<ListNode *> visited;
+        while(head!=nullptr){
+            if(visited.count(head)){
+                return head;
+            }
+            visited.insert(head);
+            head=head->next;
+        }
+        return nullptr;
+    }
+};
+
 \\
 \\方法二：快慢指针
 \\fast指针每次走两步，slow指针每次走一步，链表为a+b
