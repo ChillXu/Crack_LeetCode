@@ -1,5 +1,5 @@
 \\
-\\ for(const int & num: nums) 迭代容器中所有的元素
+\\ for(const int & num: nums) 迭代容器中所有的元素，每一个元素的临时名字为num
 \\
 class Solution {
 public:
