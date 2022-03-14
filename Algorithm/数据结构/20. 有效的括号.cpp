@@ -1,6 +1,6 @@
-\\
-\\左括号进站，遇到右括号，判断栈顶元素是否匹配
-\\
+//
+//左括号进站，遇到右括号，判断栈顶元素是否匹配
+//
 class Solution {
 public:
     bool isValid(string s) {
