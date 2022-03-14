@@ -1,7 +1,7 @@
-\\
-\\转换一下思维，如果直接对所有位置进行dfs，复杂度会很高，且不易判断是否能入海
-\\可以从太平洋和大西洋出发，反向能走到的地方，二者求交集
-\\
+//
+//转换一下思维，如果直接对所有位置进行dfs，复杂度会很高，且不易判断是否能入海
+//可以从太平洋和大西洋出发，反向能走到的地方，二者求交集
+//
 class Solution {
 public:
     vector<int> directions{-1,0,1,0,-1};
@@ -24,7 +24,7 @@ public:
         for(int i=0;i<m;++i){
             for(int j=0;j<n;++j){
                 if(can_reach_p[i][j]&&can_reach_a[i][j]){
-                    ans.push_back(vector<int>{i,j});    \\注意容器的写法，不是{i,j}
+                    ans.push_back(vector<int>{i,j});    //注意容器的写法，不是{i,j}
                 }
             }
         }
