@@ -1,7 +1,7 @@
-\\
-\\nums1是大小为m+n填充好0的数组，从后往前归并排序
-\\最终如果m>=0即nums1有剩余则排序完成，n>=0仍需要将nums2中的复制到nums1中
-\\
+//
+//nums1是大小为m+n填充好0的数组，从后往前归并排序
+//最终如果m>=0即nums1有剩余则排序完成，n>=0仍需要将nums2中的复制到nums1中
+//
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
