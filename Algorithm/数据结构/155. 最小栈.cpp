@@ -1,6 +1,6 @@
-\\
-\\用单独一个栈，栈顶记录当前最小值
-\\
+//
+//用单独一个栈，栈顶记录当前最小值
+//
 class MinStack {
     stack<int> s,min_s;
 public:
@@ -10,7 +10,7 @@ public:
     
     void push(int val) {
         s.push(val);
-        if(min_s.empty()||val<=min_s.top()){   \\ = 很关键，若有相同元素入栈，不插入min_s中，则后续min_s出栈会有问题
+        if(min_s.empty()||val<=min_s.top()){   // = 很关键，若有相同元素入栈，不插入min_s中，则后续min_s出栈会有问题
             min_s.push(val);
         }
     }
