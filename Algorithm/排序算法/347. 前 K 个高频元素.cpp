@@ -1,7 +1,7 @@
-\\
-\\hash表记录每个元素出现的次数（hash表更好，用数组无法知道所申请的数组大小）
-\\然后桶排序，桶号为频次，桶内元素为对应频次元素
-\\
+//
+//hash表记录每个元素出现的次数（hash表更好，用数组无法知道所申请的数组大小）
+//然后桶排序，桶号为频次，桶内元素为对应频次元素
+//
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
