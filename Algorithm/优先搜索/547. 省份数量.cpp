@@ -1,6 +1,6 @@
-\\
-\\用visited记录已访问的城市，主函数完成一次dfs即为一个省
-\\
+//
+//用visited记录已访问的城市，主函数完成一次dfs即为一个省
+//
 class Solution {
 public:
     int findCircleNum(vector<vector<int>>& isConnected) {
