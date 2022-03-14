@@ -1,6 +1,6 @@
-\\
-\\
-\\
+//
+//
+//
 class MyQueue {
     stack<int> in,out;
     void in2out(){
