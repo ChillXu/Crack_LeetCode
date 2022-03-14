@@ -1,6 +1,6 @@
-\\
-\\numbers数组已经排序，只需要方向相反的双指针来遍历
-\\
+//
+//numbers数组已经排序，只需要方向相反的双指针来遍历
+//
 class Solution {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) {
@@ -14,6 +14,6 @@ public:
             else if(sum<target){++l;}
             else --r;
         }
-        return vector<int>{l+1,r+1};  \\直接能够返回容器
+        return vector<int>{l+1,r+1};  //直接能够返回容器
     }
 };
