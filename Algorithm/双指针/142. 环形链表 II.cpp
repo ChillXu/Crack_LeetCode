@@ -15,8 +15,8 @@ public:
     ListNode *detectCycle(ListNode *head) {
         unordered_set<ListNode *> visited;
         while(head!=nullptr){
-            if(visited.count(head)){
-                return head;
+            if(visited.count(head)){    //count函数：查找参数值是否存在于哈希表中，若存在返回1，否则返回0
+                return head;            //find函数：...不存在返回visited.end()
             }
             visited.insert(head);
             head=head->next;
