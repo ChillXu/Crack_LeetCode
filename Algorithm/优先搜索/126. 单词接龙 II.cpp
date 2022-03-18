@@ -1,5 +1,5 @@
 //
-//
+//用bfs找小的树高，以层为单位向下遍历
 //
 class Solution {
 public:
