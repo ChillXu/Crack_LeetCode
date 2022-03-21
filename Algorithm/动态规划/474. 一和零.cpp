@@ -28,3 +28,13 @@ public:
         return make_pair(c0,c1);
     }
 };
+
+
+/* 11-15错误写法：
+            for(int i=m;i>=1;--i){             //c0或c1取值小于等于0时，二者不等价
+                for(int j=n;j>=1;--j){
+                    if(i>=c0 && j>=c1){
+                        dp[i][j]=max(dp[i][j],dp[i-c0][j-c1]+1);
+                    }
+                }
+            }
