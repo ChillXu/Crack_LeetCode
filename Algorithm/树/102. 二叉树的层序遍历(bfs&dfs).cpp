@@ -40,3 +40,27 @@ public:
         return res;
     }
 };
+
+//
+//DFS
+//
+class Solution {
+public:
+    void dfs(TreeNode* root, vector<vector<int>> &res, int level){
+        if(!root){
+            return;
+        }
+        if(level>=res.size()){
+            res.push_back(vector<int>());
+        }
+        res[level].push_back(root->val);
+        dfs(root->left,res,level+1);
+        dfs(root->right,res,level+1);
+    }
+
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> res;
+        dfs(root,res,0);
+        return res;
+    }
+};
