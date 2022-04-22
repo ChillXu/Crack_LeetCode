@@ -44,7 +44,7 @@ public:
         que.push(root->left);
         que.push(root->right);
         while(!que.empty()){
-            int curLevelSize=que.size()/2;
+            int curLevelSize=que.size()/2;     //由于不需要按层记录，所以for循环可以删除！！
             for(int i=0;i<curLevelSize;++i){
                 auto node1=que.front();
                 que.pop();
