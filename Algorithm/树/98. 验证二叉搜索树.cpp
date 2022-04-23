@@ -44,3 +44,33 @@ public:
         return true;
     }
 };
+
+//
+//堆栈中序遍历
+//
+class Solution {
+public:
+    bool isValidBST(TreeNode* root) {
+        stack<TreeNode*> stk;
+        //stk.push(root);        //会push两个根节点进去
+        long long preval=(long long)INT_MIN-1; //val最小值是INT_MIN，若输入为INT_MIN（即[-2147483648]），不减1会输出false，而实际单个根结点应为true，所以需要减1
+        while(!stk.empty() || root!=nullptr){   //当左子树节点全部出栈后，堆栈为空，但是此时右指针不为nullptr，需要继续遍历右子树！！！（不需要再在一开始判断根节点为空的情况了）
+            while(root!=nullptr){
+                stk.push(root);
+                root=root->left;
+            }
+            root=stk.top();
+            stk.pop();
+            if(root->val<=preval){
+                return false;
+            }
+            preval=root->val;
+            root=root->right;
+        }
+        return true;
+    }
+};
+
+//
+//递归
+//
