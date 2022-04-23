@@ -29,6 +29,27 @@ public:
     }
 };
 
+//
+//迭代堆栈实现
+//
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> res;
+        stack<TreeNode*> stk;
+        while (!stk.empty()|| root!=nullptr) {
+            while (root != nullptr) {
+                stk.push(root);
+                root = root->left;
+            }
+            root = stk.top();
+            stk.pop();
+            res.push_back(root->val);
+            root = root->right;
+        }
+        return res;
+    }
+};
 
 //Morris 遍历算法是另一种遍历二叉树的方法，它能将非递归的中序遍历空间复杂度降为 O(1)。
 /*
