@@ -73,4 +73,20 @@ public:
 
 //
 //递归
+//对于每一个节点判断其是否在上下界范围之内
 //
+class Solution {
+public:
+    bool check(TreeNode* root, long long lower, long long upper){  //long long 数据类型很关键！！要超过int数据类型的最小最大
+        if(!root){
+            return true;
+        }
+        if(root->val<=lower || root->val>=upper){
+            return false;
+        }
+        return check(root->left,lower,root->val) && check(root->right,root->val,upper);
+    }
+    bool isValidBST(TreeNode* root) {
+        return check(root,LONG_MIN,LONG_MAX);  // LONG_MAX 2^64-1  LONG_MIN (-LONG_MAX-1)
+    }
+};
