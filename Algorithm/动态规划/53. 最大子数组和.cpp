@@ -1,5 +1,5 @@
 //
-//dp[i]为以i结尾的数组的最大子树组和
+//dp[i]为以nums[i]结尾的数组的最大子树组和
 //
 class Solution {
 public:
