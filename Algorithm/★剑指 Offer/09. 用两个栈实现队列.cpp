@@ -1,5 +1,5 @@
 //
-//
+//stk.pop() 返回类型为void
 //
 class CQueue {
 private:
