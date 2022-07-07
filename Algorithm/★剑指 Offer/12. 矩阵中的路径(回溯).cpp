@@ -1,6 +1,8 @@
 //
 //只需要找到一个满足条件的字符串单词，注意剪枝!
 //
+//优化：1.不使用visited记录，直接修改board[row][column]='/0'
+//      2.不使用find记录，backtracking返回值为bool，res= * || * || * || *
 
 class Solution {
 public:
