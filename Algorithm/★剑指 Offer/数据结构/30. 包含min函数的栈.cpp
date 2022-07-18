@@ -50,7 +50,7 @@ public:
     void push(int x) {
         if(stk.empty()){stk_min.push(x);}
         else{stk_min.push(::min(x,stk_min.top()));}  //每次将x和stk_min.top()中小的值入栈
-        stk.push(x);
+        stk.push(x);                                 //::全局作用域符号，解决重名问题
     }
     
     void pop() {
