@@ -46,3 +46,27 @@ public:
 //
 //优先队列
 //
+class Solution {
+public:
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        struct cmp{         // 仿函数
+            bool operator()(ListNode* a, ListNode* b){
+                return a->val>b->val;        // 小顶堆，队尾大于队首
+            }
+        };
+        priority_queue<ListNode*,vector<ListNode*>,cmp> que;
+        for(auto node:lists){
+            if(node) que.push(node);         // 先将每个链表的头节点入队
+        }
+        ListNode *head=new ListNode();
+        ListNode *cur=head;
+        while(!que.empty()){
+            ListNode *node=que.top();
+            que.pop();
+            cur->next=node;
+            cur=cur->next;
+            if(node->next) que.push(node->next);   // 每出队一个节点，将其下一个节点入队
+        }
+        return head->next;
+    }
+};
