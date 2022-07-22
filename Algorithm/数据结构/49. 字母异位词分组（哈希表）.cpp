@@ -17,3 +17,29 @@ public:
         return ans;
     }
 };
+
+
+//
+//
+//
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        unordered_map<string,int> hash;             // 哈希表记录索引下标
+        vector<vector<string>> ans;
+        int index=0;
+        for(int i=0;i<strs.size();++i){             // 另一种遍历方法
+            string tmp=strs[i];
+            sort(tmp.begin(),tmp.end());
+            if(hash.count(tmp)){
+                ans[hash[tmp]].emplace_back(strs[i]);
+            }
+            else{
+                ans.emplace_back(vector<string>());     // 向ans中插入一个空的string数组，[[]]
+                ans[index].emplace_back(strs[i]);
+                hash[tmp]=index++;
+            }
+        }
+        return ans;
+    }
+};
