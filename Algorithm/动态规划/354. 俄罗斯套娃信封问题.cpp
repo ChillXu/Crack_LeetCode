@@ -16,7 +16,7 @@ public:
                 f.push_back(envelopes[i][1]);
             }
             else{
-                auto it=lower_bound(f.begin(),f.end(),envelopes[i][1]);
+                auto it=lower_bound(f.begin(),f.end(),envelopes[i][1]);     // 找到f中比envelopes[i][1]严格小的最大元素
                 *it=envelopes[i][1];
             }
         }
