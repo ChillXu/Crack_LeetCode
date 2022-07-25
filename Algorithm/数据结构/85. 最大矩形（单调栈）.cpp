@@ -1,3 +1,6 @@
+//
+//逐层求解，转化为84题
+//
 class Solution {
 public:
     int maximalRectangle(vector<vector<char>>& matrix) {
@@ -7,7 +10,10 @@ public:
         int maxArea=0;
         for(int i=0;i<m;++i){
             for(int j=0;j<n;++j){
-                heights[j]+=matrix[i][j];
+                if(matrix[i][j]=='1'){
+                    heights[j]+=1;
+                }
+                else heights[j]=0;          // 当该行matrix[i][j]=='0'时，需要将height[j]置0
             }
             maxArea=max(maxArea,largestRectangleArea(heights));
         }
