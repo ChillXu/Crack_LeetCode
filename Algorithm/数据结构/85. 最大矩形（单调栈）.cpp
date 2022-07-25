@@ -15,6 +15,22 @@ public:
     }
 
     int largestRectangleArea(vector<int>& heights){
-        vector<int>
+        int n=heights.size();
+        vector<int> newheights(n+2);
+        newheights[0]=newheights[n+1]=0;
+        newheights.insert(newheights.begin()+1,heights.begin(),heights.end());
+        stack<int> stk;
+        int curA,maxA=0;
+        for(int i=0;i<n+2;++i){
+            while(!stk.empty() && newheights[i]<newheights[stk.top()]){
+                int h=newheights[stk.top()];
+                stk.pop();
+                int w=i-stk.top()-1;
+                curA=h*w;
+                maxA=max(maxA,curA);
+            }
+            stk.push(i);
+        }
+        return maxA;
     }
 };
