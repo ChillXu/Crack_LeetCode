@@ -37,3 +37,40 @@ public:
         visited[Course]=2;        // 已完成
     }
 };
+
+//
+//bfs
+//初始时，所有入度为 0 的节点都被放入队列中
+//移除 u 的所有出边，也就是将 u 的所有相邻节点的入度减少 1，如果某个相邻节点 v 的入度变为 0，那么我们就将 v 放入队列中
+//如果搜索结束，答案包含n个节点，则存在拓扑排序
+//
+class Solution {
+public:
+    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+        vector<vector<int>> edges(numCourses);
+        vector<int> indegree(numCourses);
+        for(auto x:prerequisites){
+            edges[x[1]].push_back(x[0]);
+            indegree[x[0]]++;
+        }
+        queue<int> que;
+        int visited=0;
+        for(int i=0;i<numCourses;++i){
+            if(indegree[i]==0){
+                que.push(i);
+            }
+        }
+        while(!que.empty()){
+            int cur=que.front();
+            que.pop();
+            visited++;
+            for(auto x:edges[cur]){
+                indegree[x]--;
+                if(indegree[x]==0){
+                    que.push(x);
+                }
+            }
+        }
+        return visited==numCourses;
+    }
+};
