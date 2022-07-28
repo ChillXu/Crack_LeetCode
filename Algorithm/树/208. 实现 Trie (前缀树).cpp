@@ -1,5 +1,5 @@
 //
-//
+//字典树
 //
 class Trie {
 private:
