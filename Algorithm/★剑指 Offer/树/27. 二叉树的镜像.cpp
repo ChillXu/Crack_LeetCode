@@ -18,7 +18,7 @@ public:
         }
         TreeNode* left=mirrorTree(root->left);
         TreeNode* right=mirrorTree(root->right);
-        root->left=right;      // right、left为新节点，否则需要借助第三个节点交换
+        root->left=right;      // ~~right、left为新节点，否则需要借助第三个节点交换~~
         root->right=left;
         return root;
     }
