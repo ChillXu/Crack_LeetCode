@@ -51,7 +51,7 @@ public:
         fast=0;
         while(slow!=fast){
             slow=nums[slow];
-            fast=nums[fast];
+            fast=nums[fast];        // 第一次相遇之后，fast归零且每次只走一步
         }
         return slow;
     }
