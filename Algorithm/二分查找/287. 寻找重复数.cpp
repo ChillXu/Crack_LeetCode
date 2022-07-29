@@ -27,3 +27,32 @@ public:
         return left;
     }
 };
+
+
+//
+//双指针
+//时间：O(n)   空间：O(1)
+//将数组下标 n 和数 nums[n] 建立一个映射关系 f(n)，其映射关系 n->f(n)
+//数组中如果有重复的数，那么就会产生多对一的映射，这样形成的链表就一定会有环路了
+//[1,3,4,2,2]
+// 0,1,2,3,4
+//
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int slow=0;
+        int fast=0;
+        slow=nums[slow];
+        fast=nums[nums[fast]];
+        while(slow!=fast){
+            slow=nums[slow];
+            fast=nums[nums[fast]];
+        }
+        fast=0;
+        while(slow!=fast){
+            slow=nums[slow];
+            fast=nums[fast];
+        }
+        return slow;
+    }
+};
