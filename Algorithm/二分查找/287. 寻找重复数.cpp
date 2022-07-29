@@ -3,6 +3,7 @@
 //      假设 nums 只有一个重复的整数 ，返回这个重复的数。
 //
 //二分查找
+//时间：O(nlogn)   空间：O(1)
 //
 class Solution {
 public:
