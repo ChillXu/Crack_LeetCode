@@ -10,7 +10,7 @@
  * };
  */
  //
- //不共享内存
+ //dfs 不共享内存
  //
 class Solution {
 public:
@@ -28,9 +28,8 @@ public:
 };
 
 
-
 //
-//共享原树内存
+//dfs 共享原树内存
 //
 class Solution {
 public:
