@@ -24,3 +24,62 @@ public:
         return ans;
     }
 };
+
+
+//
+//滑动对齐
+//
+class Solution {
+public:
+    int maxLen(vector<int>& nums1, int i, vector<int>& nums2, int j, int len) {
+        int cnt=0;
+        int res=0;
+        for(int k=0;k<len;++k){
+            if(nums1[i+k]==nums2[j+k]) ++cnt;
+            else{
+                res=max(res,cnt);
+                cnt=0;
+            }
+        }
+        return max(res,cnt);
+    }
+    int findMax(vector<int>& nums1, vector<int>& nums2) {
+        int m=nums1.size(),n=nums2.size();
+        int res=0;
+        /*
+        A:           |*|*|*|*|
+        B: |*|*|*|*|*|*|
+                 ↓
+        A:       |*|*|*|*|
+        B: |*|*|*|*|*|*|
+         */
+        for(int i=1;i<m;++i){
+            res=max(res,maxLen(nums1,0,nums2,n-i,i));
+        }
+        /*
+        A:     |*|*|*|*|
+        B: |*|*|*|*|*|*|
+                 ↓
+        A: |*|*|*|*|
+        B: |*|*|*|*|*|*|
+         */
+        for(int i=n-m;i>=0;--i){
+            res=max(res,maxLen(nums1,0,nums2,i,m));
+        }
+        /*
+        A: |*|*|*|*|
+        B:   |*|*|*|*|*|*|
+                 ↓
+        A: |*|*|*|*|
+        B:       |*|*|*|*|*|*|
+         */
+        for(int i=1;i<m;++i){
+            res=max(res,maxLen(nums1,i,nums2,0,m-i));
+        }
+        return res;
+    }
+    
+    int findLength(vector<int>& nums1, vector<int>& nums2) {
+        return nums1.size()<nums2.size()?findMax(nums1,nums2):findMax(nums2,nums1);
+    }
+};
