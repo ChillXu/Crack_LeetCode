@@ -45,7 +45,7 @@ public:
                 cnt=0;
             }
         }
-        return max(res,cnt);
+        return max(res,cnt);            // 返回值需要时二者中较大的，因为如果最后一次字符以相等结束遍历，res不会更新！！！！
     }
     int findMax(vector<int>& nums1, vector<int>& nums2) {
         int m=nums1.size(),n=nums2.size();
