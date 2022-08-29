@@ -14,12 +14,13 @@ public:
             mid=quickSelection(nums,left,right);
             if(mid==target){
                 return nums[mid];
-                }
-                if(mid>target){
-                    right=mid-1;
-                }else{
-                    left=mid+1;
-                }
+            }
+            if(mid>target){
+                right=mid-1;
+            }
+            else{
+                left=mid+1;
+            }
         }
         return nums[left];  //left==right时，若还没找到，则所求即为nums[left]
     }
