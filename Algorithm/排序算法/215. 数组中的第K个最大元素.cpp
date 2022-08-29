@@ -8,7 +8,7 @@ class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
         int left=0, right=nums.size()-1;
-        int target=nums.size()-k;
+        int target=nums.size()-k;           // quickSelection从小到大排序，第k大的元素应该位于倒数第k个
         int mid;
         while(left<right){
             mid=quickSelection(nums,left,right);
